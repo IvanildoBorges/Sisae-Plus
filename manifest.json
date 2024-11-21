@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "SisAE Plus",
+    "version": "1.0",
+    "description": "Extensão para aprimorar a experiência do usuário no SisAE, com funcionalidades adicionais e interface otimizada.",
+    "permissions": ["activeTab", "scripting", "storage"],
+    "host_permissions": ["https://sisae.ifce.edu.br/*"],
+    "action": {
+        "default_icon": {
+          "16": "./assets/ifce.png",
+          "24": "./assets/ifce.png",
+          "32": "./assets/ifce.png",
+          "48": "./assets/ifce.png",
+          "128": "./assets/ifce.png"
+        }
+    },
+    "icons": {
+      "16": "./assets/ifce.png",
+      "24": "./assets/ifce.png",
+      "32": "./assets/ifce.png",
+      "48": "./assets/ifce.png",
+      "128": "./assets/ifce.png"
+    }
+}

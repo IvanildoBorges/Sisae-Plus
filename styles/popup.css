@@ -1,0 +1,235 @@
+@keyframes chacoalharIntenso {
+  0%, 10% {
+    transform: rotate(-40deg); /* Aumento da rotação negativa */
+  }
+  20% {
+    transform: rotate(40deg); /* Aumento da rotação positiva */
+  }
+  30% {
+    transform: rotate(-40deg); /* Retorno rápido à rotação negativa */
+  }
+  40% {
+    transform: rotate(20deg); /* Retorno rápido à rotação positiva */
+  }
+  50% {
+    transform: rotate(-20deg); /* Reforço do chacoalhar */
+  }
+  60% {
+    transform: rotate(5deg); /* Diminuição do chacoalhar */
+  }
+  100% {
+    transform: rotate(0deg); /* Parar ao final */
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Fontes */
+  --fonte-nome-da-familia: "Nunito", sans-serif;
+  --fonte-h1: 1.75rem;
+  --fonte-h2: 1.125rem;
+  --fonte-padrao: 0.875rem;
+  /* Cores */
+  --cor-fundo: #191025;
+  --cor-texto: #ffffff;
+  --cor-titulo: #e7e6e9;
+  --cor-botao: #495159;
+  --cor-botao-ativo: #007bff;
+  --cor-botao-desativado: #ccc;
+  --cor-overlay: rgba(0, 0, 0, 0.5);
+  --cor-de-erro: #FC776E;
+  /* Espaçamentos */
+  --espaco-direito-esquerdo-container: 1.5rem;
+  --altura-do-botao: 2rem;
+  --espaco-interno-do-botao: 0.25rem;
+  --espaco-interno-textos-do-botao: 0.75rem;
+  --circulo-do-botao: 1.5rem;
+  --altura-container-min: 20rem;
+  --largura-container-min: 22.5rem;
+}
+
+body {
+  /* Estilo das fontes do Google */
+  font-family: var(--fonte-nome-da-familia);
+  font-size: var(--fonte-padrao);
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  height: 100dvh;
+}
+
+.container {
+  min-width: var(--largura-container-min);
+  max-width: 100%;
+  min-height: var(--altura-container-min);
+  padding: 2.5rem var(--espaco-direito-esquerdo-container);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.container .secao-cabecalho {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.container .secao-cabecalho .titulo-icone {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container .secao-cabecalho .titulo-icone h1 {
+  font-size: var(--fonte-h1);
+}
+
+.container .secao-cabecalho .titulo-icone .icone-ajuda {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10; /* Ícone sobre o overlay */
+  animation: chacoalharIntenso 1.5s ease-in-out infinite; /* Animação sutil e infinita */
+  transition: transform 0.2s ease; /* Transição suave para quando o efeito parar */
+}
+
+.container .secao-cabecalho .titulo-icone .icone-ajuda svg {
+  fill: var(--cor-titulo);
+  width: 24px;
+  height: 24px;
+}
+
+h2 {
+  font-size: var(--fonte-h2);
+  font-weight: lighter;
+}
+
+.container .secao-toggle .wrapper-descricao-botao {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #251c31;
+  padding: 0.85rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.container .secao-toggle .wrapper-descricao-botao .descricao {
+  font-size: var(--fonte-padrao);
+}
+
+.container .secao-cabecalho h2, .container .secao-toggle .wrapper-descricao-botao .descricao {
+  color: var(--cor-titulo);
+}
+
+.container .secao-toggle .wrapper-descricao-botao .botao-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 5.2rem;
+  height: var(--altura-do-botao);
+  background-color: var(--cor-botao);
+  border-radius: 1rem;
+  cursor: pointer;
+  border: none;
+  -webkit-tap-highlight-color: transparent; /* Remove o realce que aparece sobre um botão ou link enquanto ele está sendo tocado */
+}
+
+/* Estilos para o botão desativado */
+.container .secao-toggle .wrapper-descricao-botao .botao-toggle.desativado {
+  background-color: var(--cor-botao-desativado);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.container .secao-toggle .wrapper-descricao-botao .botao-toggle.ativo {
+  background-color: var(--cor-botao-ativo);
+}
+
+.container .secao-toggle .wrapper-descricao-botao .botao-toggle .texto-toggle {
+  position: absolute;
+  line-height: calc(var(--altura-do-botao) - var(--espaco-interno-do-botao));
+  font-size: var(--fonte-padrao);
+  color: var(--cor-titulo);
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.container .secao-toggle .wrapper-descricao-botao .botao-toggle .texto-toggle.liga {
+  left: var(--espaco-interno-textos-do-botao); /* Distância do texto para borda do botão */
+  opacity: 0; /* Inicialmente invisível */
+}
+
+.container .secao-toggle .wrapper-descricao-botao .botao-toggle .texto-toggle.desl {
+  right: var(--espaco-interno-textos-do-botao); /* Distância do texto para borda do botão */
+}
+
+.container .secao-toggle .wrapper-descricao-botao .botao-toggle .slider-toggle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.container .secao-toggle .wrapper-descricao-botao .botao-toggle .slider-toggle .circulo-toggle {
+  position: absolute;
+
+  /* Primeiro, subtrai a altura do botão com o espaço interno, o que sobra então é subtraído novamente da altura do botão */
+  top: calc(var(--altura-do-botao) - (var(--altura-do-botao) - var(--espaco-interno-do-botao)));
+  left: calc(var(--altura-do-botao) - (var(--altura-do-botao) - var(--espaco-interno-do-botao)));
+
+  width: var(--circulo-do-botao);
+  height: var(--circulo-do-botao);
+  background-color: var(--cor-titulo);
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.secao-erro {
+  padding: 0.85rem 1rem;
+}
+
+.secao-erro .span-erro {
+  color: var(--cor-de-erro);
+}
+
+.sobrepor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--cor-overlay); /* Escurecimento */
+  display: none; /* Oculto por padrão */
+  z-index: 9; /* Colocar atrás do modal */
+}
+
+.container .dica-navegacao {
+  background-color: #251c31;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0.8rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+  display: none;
+  z-index: 11; /* Modal sobre o overlay */
+  position: absolute;
+  top: 72px;
+  right: var(--espaco-direito-esquerdo-container);
+  width: 80dvw;
+}
+
+.container .dica-navegacao.ativo {
+  display: block;
+  opacity: 1;
+}
+
+.container .dica-navegacao h2 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
