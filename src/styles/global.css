@@ -1,0 +1,90 @@
+@import url(./variaveis.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--fundo-claro);
+    color: var(--cor-do-texto);
+    width: 100dvw;
+    min-height: 100dvh;
+
+    *::selection {
+        background-color: var(--cor-da-selecao);
+        color: var(--cor-da-selecao-texto);
+    }
+}
+
+body, header {
+    transition: background-color var(--transicao-esmaecer), color var(--transicao-esmaecer);
+}
+
+.container {
+    max-width: 75rem;
+    margin: 0 auto;
+    
+    padding: var(--altura-do-cabecalho) 0px var(--espaco);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+a {
+    color: var(--cor-secundaria);
+    transition: color var(--transicao);
+}
+
+a:hover {
+    color: var(--cor-primaria);
+}
+
+.cta {
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+    background-color: var(--cor-primaria);
+    color: var(--cor-terciaria);
+    border: none;
+    padding: 0.875rem;
+    border-radius: var(--raio-da-borda);
+    cursor: pointer;
+    transition: background-color var(--transicao);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta:hover {
+    color: var(--cor-do-texto);
+    background-color: var(--cor-do-hover);
+}
+
+/* Estilo dos svgs */
+svg {
+    width: 24px;
+    height: 24px;
+}
+
+.icon {
+    fill: var(--cor-secundaria);
+    transition: all var(--transicao);
+}
+
+.icon:hover {
+    fill: var(--cor-do-hover);
+}
+
+/* Estilo dos separadores de conteúdo */
+.separador {
+    border: 1px solid var(--cor-secundaria);
+    opacity: .1;
+    transition: width var(--transicao-abrir-fechar-modal);
+    margin: var(--espaco-menor) 0px;
+}

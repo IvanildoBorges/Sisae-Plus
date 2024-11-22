@@ -6,19 +6,20 @@
     "permissions": ["activeTab", "scripting", "storage"],
     "host_permissions": ["https://sisae.ifce.edu.br/*"],
     "action": {
+      "default_popup": "popup.html",
         "default_icon": {
-          "16": "./assets/ifce.png",
-          "24": "./assets/ifce.png",
-          "32": "./assets/ifce.png",
-          "48": "./assets/ifce.png",
-          "128": "./assets/ifce.png"
+          "16": "./src/assets/ifce.png",
+          "24": "./src/assets/ifce.png",
+          "32": "./src/assets/ifce.png",
+          "48": "./src/assets/ifce.png",
+          "128": "./src/assets/ifce.png"
         }
     },
     "icons": {
-      "16": "./assets/ifce.png",
-      "24": "./assets/ifce.png",
-      "32": "./assets/ifce.png",
-      "48": "./assets/ifce.png",
-      "128": "./assets/ifce.png"
+      "16": "./src/assets/ifce.png",
+      "24": "./src/assets/ifce.png",
+      "32": "./src/assets/ifce.png",
+      "48": "./src/assets/ifce.png",
+      "128": "./src/assets/ifce.png"
     }
 }

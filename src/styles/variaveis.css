@@ -1,0 +1,37 @@
+:root {
+    --fundo-claro: #fafafa; /* Fundo neutro */
+    --fundo-escuro: #343a40; /* Fundo escuro */
+    --cor-primaria: #1C5B3F; /* Verde apenas para chamadas de ação */
+    --cor-secundaria: #50575D; /* Cor neutra para textos secundários */
+    --cor-terciaria: #ffffff; /* Cor branca para textos e icones */
+    --cor-do-texto: #333333; /* Texto em um tom escuro para melhor legibilidade */
+    --cor-de-error: #dc3545; /* Vermelho para erros */
+    --cor-do-hover: #4abf8a; /* Cor para efeito de hover */
+    --cor-do-cabecalho: #ffffff; /* Fundo para o cabeçalho */
+    --cor-invariavel: #333333; /* Cor que não muda nas trocas de temas */
+    --cor-da-selecao: #3267D1; /* Cor para seleção de elementos */
+    --cor-da-selecao-texto: #ffffff; /* Cor para seleção de elementos */
+    --espaco: 1.5rem; /* Aumentar espaço entre elementos */
+    --espaco-menor: 0.5rem;
+    --raio-da-borda: 0.5rem; /* Para bordas arredondadas suaves */
+    --transicao: 0.3s ease;
+    --transicao-abrir-fechar-modal: ease-in .7s;
+    --transicao-esmaecer: ease-in .7s;
+    --altura-do-cabecalho: 8dvh;
+}
+
+/* Estilos de transição para tema escuro */
+[data-theme='dark'] {
+    --fundo-claro: #343a40;
+    --fundo-escuro: #fafafa;
+    --cor-primaria: #67E86C;
+    --cor-secundaria: #ffffff;
+    --cor-terciaria: #343a40;
+    --cor-do-texto: #ffffff;
+    --cor-de-error: #FACDC7;
+    --cor-do-hover: #6DF771;
+    --cor-do-cabecalho: #333333;
+
+    background-color: var(--fundo-escuro);
+    color: var(--cor-do-texto);
+}

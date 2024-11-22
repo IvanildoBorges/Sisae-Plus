@@ -1,8 +1,10 @@
+import Header from "./components/layout/Header/Header"
+
 function App() {
 
   return (
     <>
-      <h1>SisAE Plus Redesign with Extension</h1>
+      <Header />
     </>
   )
 }
