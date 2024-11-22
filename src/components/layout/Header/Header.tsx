@@ -66,8 +66,25 @@ const Header: React.FC = () => {
     }
   }
 
+  function eventoDeCliqueDoLink() {
+    const linksDeNavegacao = document.querySelectorAll('#navbar-collapse .nav li .nav-link');
+    
+    try {
+      linksDeNavegacao.forEach(link => {
+        // Evento de clique para marcar o link como ativo
+        link.addEventListener('click', () => {
+          linksDeNavegacao.forEach(navLink => navLink.classList.remove('active')); // Remove 'active' de todos
+          link.classList.add('active'); // Adiciona 'active' ao link clicado
+        });
+    });
+    } catch (error) {
+        console.error("Erro ao inserir evento no link: ", error);
+    }
+  }
+
   useEffect(() => {
     atualizaTema();
+    eventoDeCliqueDoLink();
   }, []);
 
   return (
